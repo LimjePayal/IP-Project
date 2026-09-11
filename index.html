@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Processing Lab (N-PECCS502P) | S.B.J.I.T.M.R., Nagpur</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       VIEW 1: ACADEMIC LOGIN PORTAL
+       ====================================================================== -->
+  <section id="login-view" class="view-container active">
+    <div class="login-bg-glow"></div>
+    <div class="login-card">
+      <div class="college-badge">
+        <div class="college-logo-emblem">SB</div>
+        <div class="college-title">
+          <h4>S. B. JAIN INSTITUTE OF TECHNOLOGY,</h4>
+          <p>MANAGEMENT & RESEARCH, NAGPUR (AUTONOMOUS)</p>
+          <span style="font-size: 0.7rem; color: #38bdf8;">Dept. of Computer Science & Engineering</span>
+        </div>
+      </div>
+
+      <div class="login-header">
+        <h2>Image Processing Lab</h2>
+        <p>Course Code: <span style="font-family: var(--font-mono); color: var(--primary);">N-PECCS502P</span> |
+          Academic Session: 2026-2027</p>
+      </div>
+
+      <!-- Pre-loaded Student ID Information -->
+      <div class="student-info-pill">
+        <div class="student-pill-left">
+          <div class="student-avatar">PL</div>
+          <div class="student-meta">
+            <h5 id="pill-student-name">Payal Limje</h5>
+            <span id="pill-student-roll">Roll No: CS24219 | Sem V / III Year</span>
+          </div>
+        </div>
+        <span class="student-badge-tag">Verified Scholar</span>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="student-name-input">Student Name</label>
+          <div class="input-with-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            <input type="text" id="student-name-input" value="Payal Limje" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="student-roll-input">Roll Number / Student ID</label>
+          <div class="input-with-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+            <input type="text" id="student-roll-input" value="CS24219" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="student-role-select">Access Mode</label>
+          <div class="input-with-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
+            <select id="student-role-select"
+              style="width: 100%; padding: 12px 14px 12px 42px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: var(--text-main); font-family: var(--font-sans); font-size: 0.95rem;">
+              <option value="student">Student Laboratory Workspace</option>
+              <option value="faculty">Faculty Evaluator & Viva Reviewer</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          <span>Sign In to Laboratory Hub</span>
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="quick-login-divider">Quick Academic Access</div>
+
+      <button type="button" id="btn-quick-login" class="btn-quick-login">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd"
+            d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+            clip-rule="evenodd"></path>
+        </svg>
+        One-Click Student Login as Payal Limje (CS24219)
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ======================================================================
+       VIEW 2: MAIN LAB DASHBOARD & 12 PRACTICALS HUB
+       ====================================================================== -->
+  <section id="dashboard-view" class="view-container">
+    <!-- Navigation Bar -->
+    <header class="lab-navbar">
+      <div class="nav-left">
+        <div class="brand-icon">IP</div>
+        <div class="brand-text">
+          <h3>Image Processing Lab</h3>
+          <span>S.B.J.I.T.M.R., Nagpur • N-PECCS502P</span>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <div class="search-box">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" id="practical-search-input" placeholder="Search practicals, cv2 methods, keywords...">
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="progress-pill">
+          <div class="progress-circle-mini"></div>
+          <span id="nav-progress-text">0 / 12 Completed</span>
+        </div>
+
+        <button id="btn-goto-end-page" class="btn-end-page-nav" title="View final journal & completion certificate">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+            </path>
+          </svg>
+          <span>End Page & Certificate</span>
+        </button>
+
+        <div class="user-profile-btn" id="btn-user-profile" title="Click to logout">
+          <div class="profile-avatar-sm" id="nav-avatar">PL</div>
+          <span class="profile-name-sm" id="nav-username">Payal Limje</span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Layout -->
+    <div class="dashboard-layout">
+      <!-- Left Sidebar: Practicals List & Category Filters -->
+      <aside class="lab-sidebar">
+        <div class="sidebar-header">
+          <span
+            style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">12
+            LAB PRACTICALS DIRECTORY</span>
+          <div class="category-filter-pills" id="category-filter-pills">
+            <button class="filter-pill active" data-cat="all">All (12)</button>
+            <button class="filter-pill" data-cat="Color Spaces">Color Spaces</button>
+            <button class="filter-pill" data-cat="Edge Detection">Edges</button>
+            <button class="filter-pill" data-cat="Compression">Compression</button>
+            <button class="filter-pill" data-cat="Morphology">Morphology</button>
+            <button class="filter-pill" data-cat="Detection">Detection</button>
+            <button class="filter-pill" data-cat="Enhancement">Enhancement</button>
+            <button class="filter-pill" data-cat="Motion & Video">Video Motion</button>
+          </div>
+        </div>
+
+        <nav class="practicals-nav-list" id="practicals-nav-list">
+          <!-- Populated dynamically via JS -->
+        </nav>
+      </aside>
+
+      <!-- Main Reading & Interactive Pane -->
+      <main class="lab-main-pane">
+        <!-- Tab Controls (Documentation vs Interactive Studio) -->
+        <div class="tab-controls">
+          <button class="tab-btn active" data-tab="tab-details">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
+            </svg>
+            Practical Lab Manual
+          </button>
+          <button class="tab-btn" data-tab="tab-studio">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
+              </path>
+            </svg>
+            Live In-Browser Image Studio
+          </button>
+        </div>
+
+        <!-- TAB 1: PRACTICAL DETAILS & MANUAL -->
+        <div id="tab-details" class="tab-pane active">
+          <!-- Hero Header Card -->
+          <div class="practical-hero-card">
+            <div class="practical-academic-meta">
+              <span class="practical-id-badge" id="practical-num-badge">Post Lab 02</span>
+              <div class="academic-dates">
+                <span>Performed: <strong id="date-performed">05-09-2026</strong></span>
+                <span>Submission: <strong id="date-submission">12-09-2026</strong></span>
+                <span>Session: <strong id="academic-session">2026-2027</strong></span>
+              </div>
+            </div>
+
+            <h1 class="practical-title-lg" id="practical-title-text">Convert images between the RGB, HSV, YCrCb, and Lab
+              colour spaces</h1>
+
+            <div class="aim-block">
+              <h5>AIM & OBJECTIVE</h5>
+              <p id="practical-aim-text">Convert images between the RGB, HSV, YCrCb, and Lab colour spaces, analyzing
+                how colour information is encoded in each.</p>
+            </div>
+
+            <div class="completion-action-bar">
+              <div style="font-size: 0.82rem; color: var(--text-dim);">
+                Department of Computer Science and Engineering, S.B.J.I.T.M.R., Nagpur
+              </div>
+              <button id="btn-toggle-complete" class="btn-mark-complete">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Mark Practical as Completed</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Expected Learning Outcomes -->
+          <div class="content-section-card">
+            <h3 class="section-title">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+                </path>
+              </svg>
+              Objectives & Expected Learning Outcomes
+            </h3>
+            <ul class="objectives-list" id="practical-objectives-list">
+              <!-- Populated dynamically -->
+            </ul>
+          </div>
+
+          <!-- Theory & Math Card -->
+          <div class="content-section-card">
+            <h3 class="section-title">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                </path>
+              </svg>
+              Theoretical Background & Mathematical Formulation
+            </h3>
+            <div class="theory-rendered" id="practical-theory-content">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Visual Before / After Split Slider -->
+          <div class="visualizer-card">
+            <h3 class="section-title">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                </path>
+              </svg>
+              Interactive Visual Verification (Drag Slider to Compare)
+            </h3>
+            <div class="before-after-slider-container" id="ba-container">
+              <div class="ba-image ba-before">
+                <canvas id="canvas-ba-before" width="720" height="380"></canvas>
+                <span class="ba-badge ba-badge-left">INPUT IMAGE</span>
+              </div>
+              <div class="ba-image ba-after" id="ba-after-wrapper">
+                <canvas id="canvas-ba-after" width="720" height="380"></canvas>
+                <span class="ba-badge ba-badge-right">PROCESSED OUTPUT</span>
+              </div>
+              <div class="ba-slider-handle" id="ba-handle">
+                <div class="ba-slider-button">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p id="output-description-text"
+              style="font-size: 0.86rem; color: var(--text-muted); text-align: center; margin-top: 10px;"></p>
+          </div>
+
+          <!-- Python OpenCV Code Editor -->
+          <div class="code-editor-card">
+            <div class="code-header">
+              <div class="code-lang-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.04 4.542c.875 0 1.587.712 1.587 1.588s-.712 1.588-1.587 1.588c-.876 0-1.588-.712-1.588-1.588 0-.876.712-1.588 1.588-1.588zm2.08 14.916c-.875 0-1.588-.712-1.588-1.588s.713-1.588 1.588-1.588c.876 0 1.588.712 1.588 1.588 0 .876-.712 1.588-1.588 1.588z" />
+                </svg>
+                <span>Python 3.10 • OpenCV (cv2) Execution Code</span>
+              </div>
+              <button id="btn-copy-code" class="btn-copy-code">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                  </path>
+                </svg>
+                <span id="copy-label">Copy Code</span>
+              </button>
+            </div>
+            <pre><code id="code-snippet-box"># Code will appear here...</code></pre>
+          </div>
+
+          <!-- Conclusion Card -->
+          <div class="content-section-card" style="border-left: 3px solid var(--success);">
+            <h3 class="section-title" style="color: #34d399;">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Laboratory Conclusion
+            </h3>
+            <p id="practical-conclusion-text" style="color: #cbd5e1; font-size: 0.92rem;"></p>
+          </div>
+
+          <!-- Discussion Questions & Viva Prep -->
+          <div class="content-section-card">
+            <h3 class="section-title">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              Viva-Voce & Discussion Questions (Click to Reveal Answers)
+            </h3>
+            <div class="viva-list" id="viva-questions-list">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- References -->
+          <div class="content-section-card">
+            <h4 style="font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px;">
+              Official Academic References</h4>
+            <ul id="practical-references-list" style="padding-left: 20px; font-size: 0.82rem; color: #38bdf8;">
+              <!-- Populated dynamically -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 2: LIVE IN-BROWSER IMAGE PROCESSING STUDIO -->
+        <div id="tab-studio" class="tab-pane">
+          <div class="studio-grid">
+            <!-- Studio Left Controls -->
+            <div class="studio-controls-pane">
+              <div class="preset-selector">
+                <h5>1. Select Lab Sample Image</h5>
+                <div class="preset-btns-row">
+                  <button class="btn-preset active" data-preset="cat">🐱 Kitten (Colors)</button>
+                  <button class="btn-preset" data-preset="lamp">💡 Lamp (Edges)</button>
+                  <button class="btn-preset" data-preset="flowers">🌸 Flowers (Match)</button>
+                  <button class="btn-preset" data-preset="fingerprint">🔍 Silhouette/Print</button>
+                  <button class="btn-preset" data-preset="motion" style="grid-column: span 2;">🚗 Traffic
+                    Motion</button>
+                </div>
+
+                <div class="upload-box" id="upload-box">
+                  <input type="file" id="image-file-input" accept="image/*" style="display: none;">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                  </svg>
+                  <p>Or click to upload your image</p>
+                </div>
+              </div>
+
+              <div class="filter-selector">
+                <h5>2. Processing Algorithm</h5>
+                <div class="filter-grid">
+                  <button class="btn-filter-action active" data-filter="none">Original</button>
+                  <button class="btn-filter-action" data-filter="grayscale">Grayscale</button>
+                  <button class="btn-filter-action" data-filter="hsv">HSV Space</button>
+                  <button class="btn-filter-action" data-filter="ycrcb">YCrCb Space</button>
+                  <button class="btn-filter-action" data-filter="sobel">Sobel Edges</button>
+                  <button class="btn-filter-action" data-filter="prewitt">Prewitt Edges</button>
+                  <button class="btn-filter-action" data-filter="canny">Canny Edges</button>
+                  <button class="btn-filter-action" data-filter="blur">Gaussian Blur</button>
+                  <button class="btn-filter-action" data-filter="sharpen">Laplacian Sharp</button>
+                  <button class="btn-filter-action" data-filter="threshold">Thresholding</button>
+                  <button class="btn-filter-action" data-filter="erosion">Erosion</button>
+                  <button class="btn-filter-action" data-filter="dilation">Dilation</button>
+                  <button class="btn-filter-action" data-filter="correlation">Template Match</button>
+                  <button class="btn-filter-action" data-filter="motion">Motion Detect</button>
+                </div>
+              </div>
+
+              <div class="slider-group">
+                <label><span>Binary Threshold</span> <strong id="lbl-threshold">128</strong></label>
+                <input type="range" id="slider-threshold" min="0" max="255" value="128">
+              </div>
+
+              <div class="slider-group">
+                <label><span>Canny Lower Threshold</span> <strong id="lbl-canny-low">50</strong></label>
+                <input type="range" id="slider-canny-low" min="0" max="255" value="50">
+              </div>
+
+              <div class="slider-group">
+                <label><span>Canny Upper Threshold</span> <strong id="lbl-canny-high">150</strong></label>
+                <input type="range" id="slider-canny-high" min="0" max="255" value="150">
+              </div>
+
+              <div class="slider-group">
+                <label><span>Structuring Element / Blur</span> <strong id="lbl-kernel">3 px</strong></label>
+                <input type="range" id="slider-kernel" min="1" max="9" step="2" value="3">
+              </div>
+            </div>
+
+            <!-- Studio Right Canvas Stage -->
+            <div class="studio-stage">
+              <div class="canvases-row">
+                <div class="canvas-frame">
+                  <div class="canvas-frame-header">
+                    <h6>SOURCE / INPUT FRAME</h6>
+                    <span style="font-size: 0.72rem; color: var(--text-dim);">480x360 px</span>
+                  </div>
+                  <canvas id="studio-orig-canvas" width="480" height="360"></canvas>
+                </div>
+
+                <div class="canvas-frame">
+                  <div class="canvas-frame-header">
+                    <h6>LIVE PROCESSED CANVAS</h6>
+                    <span id="studio-active-tag"
+                      style="font-size: 0.72rem; color: var(--primary); font-weight: 600;">ACTIVE: ORIGINAL</span>
+                  </div>
+                  <canvas id="studio-proc-canvas" width="480" height="360"></canvas>
+                </div>
+              </div>
+
+              <!-- Real-time RGB & Intensity Histogram -->
+              <div class="histogram-card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                  <span style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--text-muted);">REAL-TIME
+                    INTENSITY HISTOGRAM (R, G, B CHANNELS)</span>
+                  <span style="font-size: 0.72rem; color: var(--text-dim);">256 Bins • Dynamic Range [0 - 255]</span>
+                </div>
+                <canvas id="studio-hist-canvas" width="700" height="70"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ======================================================================
+       VIEW 3: END PAGE / SUBMISSION & CERTIFICATE OF COMPLETION
+       ====================================================================== -->
+  <section id="end-view" class="view-container">
+    <div class="end-header-bar">
+      <button id="btn-back-to-hub" class="btn-back-to-hub">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span>Return to Practicals Hub</span>
+      </button>
+
+      <div style="display: flex; gap: 12px;">
+        <button id="btn-print-certificate" class="btn-print-certificate">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
+            </path>
+          </svg>
+          <span>Print Certificate / Save PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Metrics Summary Grid -->
+    <div class="submission-metrics-grid">
+      <div class="metric-card">
+        <h3 id="end-completed-count">12 / 12</h3>
+        <p>Practicals Verified</p>
+      </div>
+      <div class="metric-card">
+        <h3 style="color: #34d399;">98.5%</h3>
+        <p>Lab Assessment Score</p>
+      </div>
+      <div class="metric-card">
+        <h3 style="color: #c084fc;">Grade 'O'</h3>
+        <p>Evaluation Grade (Outstanding)</p>
+      </div>
+      <div class="metric-card">
+        <h3 style="color: #f59e0b;">100%</h3>
+        <p>Viva Readiness</p>
+      </div>
+    </div>
+
+    <!-- Official Certificate of Completion (S.B. Jain Institute Format) -->
+    <div class="certificate-container" id="certificate-print-area">
+      <div class="certificate-header">
+        <div class="cert-college-title">S. B. JAIN INSTITUTE OF TECHNOLOGY, MANAGEMENT & RESEARCH, NAGPUR</div>
+        <div class="cert-department">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</div>
+        <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">(An Autonomous Institute Affiliated to RTM
+          Nagpur University | Accredited NAAC 'A+' Grade)</div>
+        <h2 class="cert-main-title">CERTIFICATE OF LABORATORY COMPLETION</h2>
+      </div>
+
+      <div class="cert-body">
+        This is to certify that the practical work documented in this journal has been satisfactorily carried out by
+        student
+        <span class="cert-highlight" id="cert-student-name">Payal Limje</span>, bearing University / College Roll Number
+        <span class="cert-highlight" id="cert-student-roll">CS24219</span>, enrolled in
+        <span class="cert-highlight">Semester V / Year III (B.Tech Computer Science and Engineering)</span> for the
+        course
+        <span class="cert-highlight">Image Processing Lab (Course Code: N-PECCS502P)</span> during the Academic Session
+        <span class="cert-highlight">2026-2027</span>.
+        <br><br>
+        The candidate has diligently executed all <strong>12 prescribed laboratory experiments</strong> covering Color
+        Spaces, Derivative Edge Detectors, Spatial Filters, Compression Techniques, Morphological Transformations,
+        Correlation Object Detection, Frequency Domain FFT Filtering, and Background Modeling for Motion Analysis in the
+        department laboratories.
+      </div>
+
+      <!-- Practicals Verification Table -->
+      <table class="practicals-verification-table">
+        <thead>
+          <tr>
+            <th>Prac No.</th>
+            <th>Title & Aim of Experiment</th>
+            <th>Date Performed</th>
+            <th>Date Submitted</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="cert-table-body">
+          <!-- Populated dynamically with all 12 practicals -->
+        </tbody>
+      </table>
+
+      <!-- Signatures Row -->
+      <div class="cert-signatures-row">
+        <div class="signature-block">
+          <div class="sign-line"></div>
+          <div class="sign-title">Faculty In-Charge / Teacher</div>
+          <div class="sign-sub">Dept. of CSE, S.B.J.I.T.M.R.</div>
+        </div>
+
+        <div class="cert-official-stamp">
+          <span>S.B.J.I.T.M.R.</span>
+          <span style="font-size: 0.55rem;">CSE LAB DEPT</span>
+          <span>VERIFIED</span>
+        </div>
+
+        <div class="signature-block">
+          <div class="sign-line"></div>
+          <div class="sign-title">Head of Department (HOD)</div>
+          <div class="sign-sub">Computer Science & Engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- External Script Dependencies -->
+  <script src="practicals-data.js"></script>
+  <script src="image-processor.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
